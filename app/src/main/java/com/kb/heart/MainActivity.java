@@ -93,8 +93,8 @@ public class MainActivity extends BaseActivity {
 
         fm.beginTransaction().add(R.id.container,mHomePage, mHomePage.TAG)
                 .add(R.id.container, mConsultPage, mConsultPage.TAG).hide(mConsultPage)
-                .add(R.id.container, mGroupPage, mGroupPage.TAG).hide(mGroupPage)
-                .add(R.id.container, mDynamicPage, mDynamicPage.TAG).hide(mDynamicPage)
+//                .add(R.id.container, mGroupPage, mGroupPage.TAG).hide(mGroupPage)
+//                .add(R.id.container, mDynamicPage, mDynamicPage.TAG).hide(mDynamicPage)
                 .show(mHomePage)
                 .commit();
 

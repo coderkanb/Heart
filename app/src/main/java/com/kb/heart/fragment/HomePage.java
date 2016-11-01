@@ -34,21 +34,6 @@ public class HomePage extends BaseFragment {
     }
 
     @Override
-    public int bindLayout() {
-        return R.layout.fragment_home;
-    }
-
-    @Override
-    public void initView(View view) {
-
-    }
-
-    @Override
-    public void doBusiness(Context mContext) {
-
-    }
-
-    @Override
     public void widgetClick(View v) {
 
     }

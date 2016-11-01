@@ -34,21 +34,6 @@ public class DynamicPage extends BaseFragment {
     }
 
     @Override
-    public int bindLayout() {
-        return R.layout.fragment_dynamic;
-    }
-
-    @Override
-    public void initView(View view) {
-
-    }
-
-    @Override
-    public void doBusiness(Context mContext) {
-
-    }
-
-    @Override
     public void widgetClick(View v) {
 
     }

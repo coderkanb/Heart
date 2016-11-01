@@ -34,21 +34,6 @@ public class ConsultPage extends BaseFragment {
     }
 
     @Override
-    public int bindLayout() {
-        return R.layout.fragment_consult;
-    }
-
-    @Override
-    public void initView(View view) {
-
-    }
-
-    @Override
-    public void doBusiness(Context mContext) {
-
-    }
-
-    @Override
     public void widgetClick(View v) {
 
     }

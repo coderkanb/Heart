@@ -19,7 +19,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     private boolean isDebug;
     private String APP_NAME;
-    private View mContextView = null;
+//    private View mContextView = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,35 +28,35 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         APP_NAME = MainApplication.APP_NAME;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        mContextView = inflater.inflate(bindLayout(), container, false);
-        initView(mContextView);
-        doBusiness(getActivity());
-        return mContextView;
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        mContextView = inflater.inflate(bindLayout(), container, false);
+//        initView(mContextView);
+//        doBusiness(getActivity());
+//        return mContextView;
+//    }
 
     /**
      * [绑定布局]
      *
      * @return
      */
-    public abstract int bindLayout();
+//    public abstract int bindLayout();
 
     /**
      * [初始化控件]
      *
      * @param view
      */
-    public abstract void initView(final View view);
+//    public abstract void initView(final View view);
 
     /**
      * [业务操作]
      *
      * @param mContext
      */
-    public abstract void doBusiness(Context mContext);
+//    public abstract void doBusiness(Context mContext);
 
     /** View点击 **/
     public abstract void widgetClick(View v);

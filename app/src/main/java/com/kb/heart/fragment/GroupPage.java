@@ -3,13 +3,16 @@ package com.kb.heart.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.kb.heart.BaseFragment;
 import com.kb.heart.R;
+import com.kb.heart.utils.ToastUtils;
 
 /**
  * 群组页
@@ -19,6 +22,8 @@ import com.kb.heart.R;
  */
 public class GroupPage extends BaseFragment {
 
+    // 商城入口
+    private TextView mTvMall;
 
     public GroupPage() {
         // Required empty public constructor
@@ -34,23 +39,28 @@ public class GroupPage extends BaseFragment {
     }
 
     @Override
-    public int bindLayout() {
-        return R.layout.fragment_group;
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initView();
+        setupView();
     }
 
-    @Override
-    public void initView(View view) {
-
+    private void initView() {
+        mTvMall = (TextView) layout.findViewById(R.id.group_tv_mall);
     }
 
-    @Override
-    public void doBusiness(Context mContext) {
-
+    private void setupView() {
+        mTvMall.setOnClickListener(this);
     }
 
     @Override
     public void widgetClick(View v) {
+        switch (v.getId()) {
+            case R.id.group_tv_mall:
+                ToastUtils.showShort("mall");
+                break;
 
+        }
     }
 
 }
