@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Heart</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="controller0">首页</string>
+    <string name="controller1">咨询</string>
+    <string name="controller2">群组</string>
+    <string name="controller3">心事</string>
 </resources>

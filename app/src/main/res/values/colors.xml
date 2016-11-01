@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="app_top_bar_bg_color">#FFFFFF</color>
+    <color name="app_bottom_bar_text_color_n">#959595</color>
+    <color name="app_bottom_bar_text_color_p">#FF8472</color>
+    <color name="app_gray">#959595</color>
 </resources>

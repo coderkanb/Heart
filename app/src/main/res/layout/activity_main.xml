@@ -4,14 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.kb.heart.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/controller_zero"
+                android:checked="true"
+                style="@style/style_app_bottom_bar"
+                android:drawableTop="@drawable/selector_tab_controller_zero"
+                android:text="@string/controller0"
+                android:onClick="onTabClick"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/controller_one"
+                style="@style/style_app_bottom_bar"
+                android:drawableTop="@drawable/selector_tab_controller_one"
+                android:text="@string/controller1"
+                android:onClick="onTabClick"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/controller_extra"
+                style="@style/style_app_bottom_bar"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/controller_two"
+                style="@style/style_app_bottom_bar"
+                android:drawableTop="@drawable/selector_tab_controller_two"
+                android:text="@string/controller2"
+                android:onClick="onTabClick"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/controller_three"
+                style="@style/style_app_bottom_bar"
+                android:drawableTop="@drawable/selector_tab_controller_three"
+                android:text="@string/controller3"
+                android:onClick="onTabClick"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        style="@style/style_fine_line"
+        android:layout_above="@id/bottom_bar"
+        />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/view1"
+        >
+
+    </FrameLayout>
+
 </RelativeLayout>
