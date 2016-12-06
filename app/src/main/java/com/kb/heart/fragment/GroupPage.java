@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.kb.heart.BaseFragment;
 import com.kb.heart.R;
+import com.kb.heart.activity.MallActivity;
 import com.kb.heart.utils.ToastUtils;
 
 /**
@@ -28,7 +29,6 @@ public class GroupPage extends BaseFragment {
     public GroupPage() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,7 +57,7 @@ public class GroupPage extends BaseFragment {
     public void widgetClick(View v) {
         switch (v.getId()) {
             case R.id.group_tv_mall:
-                ToastUtils.showShort("mall");
+                startActivity(MallActivity.class);
                 break;
 
         }

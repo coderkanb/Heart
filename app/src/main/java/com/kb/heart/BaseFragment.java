@@ -1,6 +1,7 @@
 package com.kb.heart;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -20,6 +21,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     private boolean isDebug;
     private String APP_NAME;
 //    private View mContextView = null;
+    private long lastClick = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,7 +65,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (fastClick())
+        if (!fastClick())
             widgetClick(v);
     }
 
@@ -83,17 +85,60 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         }
     }
 
+
+    /**
+     * [页面跳转]
+     *
+     * @param clz
+     */
+    public void startActivity(Class<?> clz) {
+        startActivity(clz, null);
+    }
+
+    /**
+     * [携带数据的页面跳转]
+     *
+     * @param clz
+     * @param bundle
+     */
+    public void startActivity(Class<?> clz, Bundle bundle) {
+        Intent intent = new Intent();
+        intent.setClass(getContext(), clz);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+    }
+
+
+    /**
+     * [含有Bundle通过Class打开编辑界面]
+     *
+     * @param cls
+     * @param bundle
+     * @param requestCode
+     */
+    public void startActivityForResult(Class<?> cls, Bundle bundle,
+                                       int requestCode) {
+        Intent intent = new Intent();
+        intent.setClass(getContext(), cls);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivityForResult(intent, requestCode);
+    }
+
     /**
      * [防止快速点击]
      *
      * @return
      */
     private boolean fastClick() {
-        long lastClick = 0;
-        if (System.currentTimeMillis() - lastClick <= 1000) {
-            return false;
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastClick <= 1000) {
+            return true;
         }
-        lastClick = System.currentTimeMillis();
-        return true;
+        lastClick = currentTime;
+        return false;
     }
 }

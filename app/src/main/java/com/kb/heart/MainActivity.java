@@ -1,11 +1,14 @@
 package com.kb.heart;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -34,6 +37,12 @@ public class MainActivity extends BaseActivity {
 
     private long mExitTime;
 
+    // 底部动画
+    private ImageView mIvAnim1;
+    private AnimationDrawable mAnim1;
+    private ImageView mIvAnim2;
+    private AnimationDrawable mAnim2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +50,7 @@ public class MainActivity extends BaseActivity {
 
         initView();
         setupView();
-
+        initAnim();
     }
 
     private void initView() {
@@ -139,6 +148,14 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    private void initAnim() {
+        mIvAnim1 = (ImageView) findViewById(R.id.main_iv_anim1);
+        mAnim1 = (AnimationDrawable) mIvAnim1.getBackground();
+        mIvAnim2 = (ImageView) findViewById(R.id.main_iv_anim2);
+        mAnim2 = (AnimationDrawable) mIvAnim2.getBackground();
+
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK){
@@ -151,5 +168,19 @@ public class MainActivity extends BaseActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mAnim1.start();
+        mAnim2.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAnim1.stop();
+        mAnim2.stop();
     }
 }

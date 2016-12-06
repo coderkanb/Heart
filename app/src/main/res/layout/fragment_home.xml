@@ -1,14 +1,273 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@color/white"
-             tools:context="com.kb.heart.fragment.HomePage">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@color/white"
+              android:orientation="vertical"
+              tools:context="com.kb.heart.fragment.HomePage">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:background="@color/app_top_bar_bg_color"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="@dimen/app_top_bar_height"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <RelativeLayout
+            android:id="@+id/left_layout"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/left_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/black"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            />
+
+        <RelativeLayout
+            android:id="@+id/right_layout"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="客服"
+                android:gravity="center"
+                android:textColor="@color/black"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        style="@style/style_fine_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/home_iv_entry1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/home_tv_entry1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我要倾诉"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_toRightOf="@id/home_iv_entry1"
+                    android:layout_alignTop="@id/home_iv_entry1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="把烦恼大声说出来"
+                    android:textSize="@dimen/text_size_tiny"
+                    android:layout_alignLeft="@id/home_tv_entry1"
+                    android:layout_below="@id/home_tv_entry1"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/app_gray"
+                />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/home_iv_entry2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/home_tv_entry2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我要倾诉"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_toRightOf="@id/home_iv_entry2"
+                    android:layout_alignTop="@id/home_iv_entry2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="把烦恼大声说出来"
+                    android:textSize="@dimen/text_size_tiny"
+                    android:layout_alignLeft="@id/home_tv_entry2"
+                    android:layout_below="@id/home_tv_entry2"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            style="@style/style_fine_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/home_iv_entry3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/home_tv_entry3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我要倾诉"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_toRightOf="@id/home_iv_entry3"
+                    android:layout_alignTop="@id/home_iv_entry3"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="把烦恼大声说出来"
+                    android:textSize="@dimen/text_size_tiny"
+                    android:layout_alignLeft="@id/home_tv_entry3"
+                    android:layout_below="@id/home_tv_entry3"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/app_gray"
+                />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/home_iv_entry4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/home_tv_entry4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我要倾诉"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_toRightOf="@id/home_iv_entry4"
+                    android:layout_alignTop="@id/home_iv_entry4"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="把烦恼大声说出来"
+                    android:textSize="@dimen/text_size_tiny"
+                    android:layout_alignLeft="@id/home_tv_entry4"
+                    android:layout_below="@id/home_tv_entry4"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        style="@style/style_fine_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/call_list_voice"
+            android:layout_marginRight="5dp"
+            />
+
+        <com.sunfusheng.marqueeview.MarqueeView
+            android:id="@+id/marqueeView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            app:mvAnimDuration="500"
+            app:mvTextColor="@color/app_gray"
+            app:mvInterval="1500"
+            app:mvTextSize="14sp"
+            app:mvSingleLine="true"/>
+    </LinearLayout>
+
+</LinearLayout>

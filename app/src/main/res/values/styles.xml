@@ -28,4 +28,10 @@
         <item name="android:layout_height">1px</item>
         <item name="android:background">@color/app_gray</item>
     </style>
+
+    <style name="style_mall_entry_bar">
+        <item name="android:layout_width">@dimen/mall_entry_bar_width</item>
+        <item name="android:layout_height">@dimen/mall_entry_bar_height</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

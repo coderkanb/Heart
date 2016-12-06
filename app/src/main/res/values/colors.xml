@@ -9,6 +9,9 @@
     <color name="app_bottom_bar_text_color_p">#FF8472</color>
     <color name="app_gray">#959595</color>
 
+    <color name="app_bg">#F4F4F4</color>
+    <color name="app_gray1">#CBCBCB</color>
+
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 </resources>

@@ -99,4 +99,27 @@
 
     </FrameLayout>
 
+    <FrameLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+
+        <ImageView
+            android:id="@+id/main_iv_anim1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/anim_home_bottom_live"
+            />
+
+        <ImageView
+            android:id="@+id/main_iv_anim2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/anim_home_bottom_tv"
+            />
+    </FrameLayout>
 </RelativeLayout>

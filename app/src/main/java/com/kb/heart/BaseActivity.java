@@ -34,6 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
     /** 是否输出日志信息 **/
     private boolean isDebug;
     private String APP_NAME;
+    private long lastClick = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,8 @@ public abstract class BaseActivity extends AppCompatActivity implements
         }
 
         ActivityCollector.addActivity(this);
+        // 隐藏ActionBar
+        getSupportActionBar().hide();
     }
 
     /**
@@ -122,7 +125,7 @@ public abstract class BaseActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(View v) {
-        if (fastClick())
+        if (!fastClick())
             widgetClick(v);
     }
 
@@ -229,12 +232,12 @@ public abstract class BaseActivity extends AppCompatActivity implements
      * @return
      */
     private boolean fastClick() {
-        long lastClick = 0;
-        if (System.currentTimeMillis() - lastClick <= 1000) {
-            return false;
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastClick <= 1000) {
+            return true;
         }
-        lastClick = System.currentTimeMillis();
-        return true;
+        lastClick = currentTime;
+        return false;
     }
 
 }
