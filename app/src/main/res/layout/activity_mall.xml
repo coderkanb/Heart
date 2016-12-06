@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.kb.heart.activity.MallActivity">
+    tools:context="com.sesame.heart.activity.MallActivity">
 
     <TextView
         android:id="@+id/mall_tv_personal_info_verification"

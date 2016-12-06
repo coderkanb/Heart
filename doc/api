@@ -21,3 +21,9 @@ api
 
     精选阅读
 
+4. 心理圈
+    1. 头部
+    http://api.xinliji.me/mindCircle/loadBanner
+
+    2. 列表
+    http://api.xinliji.me/mindCircle/loadMindList

@@ -4,7 +4,7 @@
              android:layout_height="match_parent"
              android:background="@color/white"
               android:orientation="vertical"
-             tools:context="com.kb.heart.fragment.GroupPage">
+             tools:context="com.sesame.heart.fragment.GroupPage">
 
     <!-- TODO: Update blank fragment layout -->
 

@@ -5,7 +5,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:background="@color/white"
               android:orientation="vertical"
-              tools:context="com.kb.heart.fragment.HomePage">
+              tools:context="com.sesame.heart.fragment.HomePage">
 
     <LinearLayout
         android:background="@color/app_top_bar_bg_color"
