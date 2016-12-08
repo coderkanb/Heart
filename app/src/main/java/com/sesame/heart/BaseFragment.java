@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.View;
 
+import com.zhy.http.okhttp.OkHttpUtils;
+
 /**
  * Created by Administrator on 2016/10/31.
  */
@@ -137,5 +139,11 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         }
         lastClick = currentTime;
         return false;
+    }
+
+    @Override
+    public void onDestroy() {
+        OkHttpUtils.getInstance().cancelTag(this);
+        super.onDestroy();
     }
 }

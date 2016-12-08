@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.zhy.http.okhttp.OkHttpUtils;
+
 /**
  * BaseActivity
  *
@@ -182,9 +184,10 @@ public abstract class BaseActivity extends AppCompatActivity implements
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         $Log(TAG + "--->onDestroy()");
         ActivityCollector.removeActivity(this);
+        OkHttpUtils.getInstance().cancelTag(this);
+        super.onDestroy();
     }
 
     /**
