@@ -21,5 +21,10 @@ public class ClientAPI {
 
     }
 
-
+    public static void getMindList(StringCallback callback){
+        OkHttpUtils.get()
+                .url(HttpUrls.MIND_LIST)
+                .build()
+                .execute(callback);
+    }
 }

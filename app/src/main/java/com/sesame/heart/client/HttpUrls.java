@@ -9,5 +9,7 @@ public class HttpUrls {
     // 首页跑马灯
     public static final String HOME_MARQUEE = BASE_URL + "com/loadActionLabels";
 
-
+    // http://api.xinliji.me/mindCircle/loadMindList
+    // 心理圈
+    public static final String MIND_LIST = BASE_URL + "mindCircle/loadMindList";
 }

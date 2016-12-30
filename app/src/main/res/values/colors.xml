@@ -11,6 +11,8 @@
 
     <color name="app_bg">#F4F4F4</color>
     <color name="app_gray1">#CBCBCB</color>
+    <color name="app_gold">#EBBE64</color>
+    <color name="app_blue">#8290AF</color>
 
     <color name="top_bar_normal_bg">#FFFFFF</color> <!--00acff--> <!--FF6666--><!--E10C28-->
 

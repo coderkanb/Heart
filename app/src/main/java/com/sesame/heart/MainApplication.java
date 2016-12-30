@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.kb.heart.R;
+import com.sesame.heart.client.ClientAPIHelper;
 
 /**
  * Created by Administrator on 2016/10/31.
@@ -22,6 +23,7 @@ public class MainApplication extends Application {
         APP_NAME = getResources().getString(R.string.app_name);
         sContext = getApplicationContext();
 
+        ClientAPIHelper.getInstance().setApplicationContext(this);
         initUtils();
     }
 
