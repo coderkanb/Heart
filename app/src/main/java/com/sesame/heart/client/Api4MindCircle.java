@@ -14,19 +14,23 @@ import okhttp3.Call;
  */
 public class Api4MindCircle extends BaseClientAPI {
 
-    public void getMindList(Map<String, String> param, final BaseDataListener<MindBean> listener){
-        doGet(HttpUrls.MIND_LIST, null,param, new DataCallback<MindBean>(mContext){
+//    public void getMindList(Map<String, String> param, final BaseDataListener<MindBean> listener){
+//        doGet(HttpUrls.MIND_LIST, null,param, new DataCallback<MindBean>(mContext){
+//
+//            @Override
+//            public void onError(Call call, Exception e, int id) {
+//                listener.onFail(call, e);
+//            }
+//
+//            @Override
+//            public void onResponse(Object response, int id) {
+//                MindBean bean = (MindBean) response;
+//                listener.preDeal(mContext, bean);
+//            }
+//        });
+//    }
 
-            @Override
-            public void onError(Call call, Exception e, int id) {
-                listener.onFail(call, e);
-            }
-
-            @Override
-            public void onResponse(Object response, int id) {
-                MindBean bean = (MindBean) response;
-                listener.preDeal(mContext, bean);
-            }
-        });
+    public void getMindList2(Map<String, String> param, DataCallback<MindBean> callback){
+        doGet(HttpUrls.MIND_LIST, null, param, callback);
     }
 }

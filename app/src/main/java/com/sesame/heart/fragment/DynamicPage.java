@@ -16,9 +16,11 @@ import com.kb.heart.R;
 import com.sesame.heart.adapter.MindQuickAdapter;
 import com.sesame.heart.adapter.MindRecyclerAdapter;
 import com.sesame.heart.bean.MindBean;
+import com.sesame.heart.callback.DataCallback;
 import com.sesame.heart.client.Api4MindCircle;
 import com.sesame.heart.client.BaseDataListener;
 import com.sesame.heart.client.ClientAPIHelper;
+import com.sesame.heart.utils.L;
 import com.sesame.heart.utils.ToastUtils;
 
 import java.util.ArrayList;
@@ -106,30 +108,8 @@ public class DynamicPage extends BaseFragment {
         Map<String, String> param = new HashMap<>();
         param.put("page", "" + page);
         Api4MindCircle api4MindCircle = (Api4MindCircle) ClientAPIHelper.getInstance().getClientAPI(Api4MindCircle.class);
-        api4MindCircle.getMindList(param, new BaseDataListener<MindBean>() {
-            @Override
-            public void onFail(Call call, Exception e) {
-                ToastUtils.showShort(e.getMessage());
-                dismissLoadingDialog();
-            }
 
-            @Override
-            public void onSuccess(MindBean entity) {
-                if (entity != null) {
-                    List<MindBean.ResultsBean> results = entity.getResults();
-
-                    if (results != null && !results.isEmpty()) {
-                        if (page == 1) {
-                            mList.clear();
-                        }
-                        mList.addAll(results);
-                        mMindAdapter.notifyDataSetChanged();
-                    }
-                }
-                dismissLoadingDialog();
-            }
-        });
-
+        // 最初的请求方式
 //        ClientAPI.getMindList(new StringCallback() {
 //            @Override
 //            public void onError(Call call, Exception e, int id) {
@@ -154,6 +134,63 @@ public class DynamicPage extends BaseFragment {
 //                dismissLoadingDialog();
 //            }
 //        });
+
+        // 1、封装网络请求。这里使用了BaseDataListener
+//        api4MindCircle.getMindList(param, new BaseDataListener<MindBean>() {
+//            @Override
+//            public void onFail(Call call, Exception e) {
+//                ToastUtils.showShort(e.getMessage());
+//                dismissLoadingDialog();
+//            }
+//
+//            @Override
+//            public void onSuccess(MindBean entity) {
+//                L.d(TAG, "getMindList.onSuccess entity.code = " + entity.code);
+//
+//                if (entity != null) {
+//                    List<MindBean.ResultsBean> results = entity.getResults();
+//
+//                    if (results != null && !results.isEmpty()) {
+//                        if (page == 1) {
+//                            mList.clear();
+//                        }
+//                        mList.addAll(results);
+//                        mMindAdapter.notifyDataSetChanged();
+//                    }
+//                }
+//                dismissLoadingDialog();
+//            }
+//        });
+
+        // 2、在DataCallback里直接修改的，去掉了BaseDataListener
+        api4MindCircle.getMindList2(param, new DataCallback<MindBean>(getContext()) {
+            @Override
+            protected void onFail(Call call, Exception e, int id) {
+            }
+
+            @Override
+            protected void onSuccess(Object response, int id) {
+
+                MindBean entity = (MindBean) response;
+
+                L.d(TAG, "getMindList.onSuccess entity.code = " + entity.code);
+
+                if (entity != null) {
+                    List<MindBean.ResultsBean> results = entity.getResults();
+
+                    if (results != null && !results.isEmpty()) {
+                        if (page == 1) {
+                            mList.clear();
+                        }
+                        mList.addAll(results);
+                        mMindAdapter.notifyDataSetChanged();
+                    }
+                }
+                dismissLoadingDialog();
+
+            }
+        });
+
     }
 
     private void dismissLoadingDialog() {

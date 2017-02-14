@@ -6,7 +6,7 @@ import java.util.List;
  * 心理圈 列表
  * Created by Administrator on 2016/12/23.
  */
-public class MindBean {
+public class MindBean extends BaseBean{
 
     /**
      * errorCode : 0
