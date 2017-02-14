@@ -50,6 +50,7 @@ public class MainActivity extends BaseActivity {
         initView();
         setupView();
         initAnim();
+        // ..
     }
 
     private void initView() {
