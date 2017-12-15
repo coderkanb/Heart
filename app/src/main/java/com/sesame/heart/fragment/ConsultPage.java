@@ -12,7 +12,6 @@ import com.kb.heart.R;
 /**
  * 咨询页
  *
- * User: kanbin
  * Date: 2016/11/1
  */
 public class ConsultPage extends BaseFragment {

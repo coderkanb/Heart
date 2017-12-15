@@ -10,7 +10,6 @@ import com.kb.heart.R;
 /**
  * 练习页
  *
- * User: kanbin
  * Date: 2016/11/1
  */
 public class MallActivity extends BaseActivity {

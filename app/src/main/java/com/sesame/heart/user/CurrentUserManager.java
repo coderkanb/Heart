@@ -6,7 +6,6 @@ import com.sesame.heart.utils.SPUtils;
 /**
  * 当前登录用户信息管理
  *
- * @author kanbin
  * @date 2016/7/9
  */
 public class CurrentUserManager {

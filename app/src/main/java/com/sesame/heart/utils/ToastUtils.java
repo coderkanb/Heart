@@ -8,7 +8,6 @@ import com.sesame.heart.MainApplication;
 /**
  * Toast工具类
  *
- * @author kanbin
  * @date 2016/6/1
  */
 public class ToastUtils {

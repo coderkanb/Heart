@@ -16,7 +16,7 @@ import okhttp3.Response;
 /**
  * 将服务器返回的数据转换成接口需要的参数类型
  *
- * Created by kanbin on 2016/12/8.
+ * Created by Admin on 2016/12/8.
  */
 public abstract class DataCallback<T> extends Callback {
     public static final String TAG = DataCallback.class.getSimpleName();

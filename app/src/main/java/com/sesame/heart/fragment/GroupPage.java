@@ -15,7 +15,6 @@ import com.sesame.heart.activity.MallActivity;
 /**
  * 群组页
  *
- * User: kanbin
  * Date: 2016/10/31
  */
 public class GroupPage extends BaseFragment {

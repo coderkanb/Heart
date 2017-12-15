@@ -26,7 +26,6 @@ import okhttp3.Call;
 /**
  * 首页
  *
- * User: kanbin
  * Date: 2016/11/1
  */
 public class HomePage extends BaseFragment {
